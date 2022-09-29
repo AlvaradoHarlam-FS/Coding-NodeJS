@@ -1,5 +1,4 @@
 const express = require("express");
-const { path } = require("../app/app");
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -25,7 +24,7 @@ res.status(200).json({
 });
 
  // POST
-router.post("", (req, res) => {
+router.post("/", (req, res) => {
     res.status(200).json({
         message: 'POST - FAILED',
         metadata: {

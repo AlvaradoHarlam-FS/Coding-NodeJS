@@ -11,7 +11,7 @@
     "NodeJS",
     "Assigment"
   ],
-  "author": "Eric Clarke",
+  "author": "Harlam Alvarado",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.2",
