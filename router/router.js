@@ -1,4 +1,5 @@
 const express = require("express");
+const { path } = require("../app/app");
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -14,7 +15,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
 const id = req.params.id
 res.status(200).json({
-    message: 'GET - SUCCESSFUL',
+    message: 'GET 4- SUCCESSFUL',
     id: id,
     methadata: {
         hostname: req.hostname,
@@ -23,4 +24,46 @@ res.status(200).json({
 });
 });
 
+ // POST
+router.post("", (req, res) => {
+    res.status(200).json({
+        message: 'POST - FAILED',
+        metadata: {
+            host:req.hostname,
+            port:req.socket.localPort,
+            method: req.method
+        }
+    })
+});
+
+// PATCH
+router.patch("/:id", (req, res) => {
+    const id= req.params.id;
+    res.status(200).json({
+        message: 'POST - PATCH',
+        id: id,
+        metadata: {
+            host:req.hostname,
+            port:req.socket.localPort,
+            method: req.method
+        }
+    })
+});
+
+// DELETE
+router.delete("/:id", (req, res) => {
+    const id= req.params.id;
+    res.status(200).json({
+        message: 'POST - delete',
+        id: id,
+        metadata: {
+            host:req.hostname,
+            port:req.socket.localPort,
+            method: req.method
+        }
+    })
+});
+  
+  
+  
 module.exports = router;

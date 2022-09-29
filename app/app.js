@@ -13,7 +13,8 @@ app.get("/", (req,res,next)=>{
 })
 // cors
 // localhost:3000/
-app.use('/example', router);
+app.use('/', router);
+app.use('/89', router);
 
 //add middleware to handle errors and bad
 app.use((req,res,next)=>{
